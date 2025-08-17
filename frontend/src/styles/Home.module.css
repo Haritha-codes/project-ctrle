@@ -1,0 +1,134 @@
+.indexPage {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #284c46, #000000 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.centeredText {
+  font-size: 120px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 10px;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.subText {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* ======= Moving pills section ======= */
+.orbitBox {
+  position: relative;
+  width: 100vw;
+  height: 70px;
+  margin-top: 180px;
+  background: #284c46;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(36, 209, 143, 0.5);
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(36, 209, 143, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+/* Continuous track (pills duplicated inside) */
+.pillsTrack {
+  display: flex;
+  gap: 30px;
+  animation: scrollLoop 15s linear infinite;
+  font-weight: 600;
+  font-size: 14px;
+  color: #24d18f;
+  white-space: nowrap;
+}
+
+/* Each pill item */
+.pillItem {
+  flex: 0 0 auto;
+  user-select: none;
+}
+
+/* Smooth infinite loop */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================== MOBILE RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .indexPage {
+    gap: 6px;
+    padding: 20px;
+  }
+
+  .centeredText {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+
+  .subText {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .orbitBox {
+    height: 50px;
+    margin-top: 120px;
+  }
+
+  .pillsTrack {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  .pillItem {
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .centeredText {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .subText {
+    font-size: 10px;
+  }
+
+  .orbitBox {
+    height: 40px;
+    margin-top: 100px;
+  }
+
+  .pillsTrack {
+    gap: 10px;
+    font-size: 10px;
+  }
+}

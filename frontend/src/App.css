@@ -1,0 +1,82 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full page + background */
+html, body, #root {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #284c46, #000000 60%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+  /* No padding-top here */
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar li a:hover {
+  color: #24d18f;
+  background: rgba(36, 209, 143, 0.12);
+  box-shadow: 0 0 8px #24d18f;
+}
+
+/* Main content */
+.content {
+  max-width: 700px;
+  margin: auto;
+  padding: 100px 20px 20px 20px; /* top padding to avoid navbar */
+  background: rgba(0,0,0,0.3);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.content button {
+  background-color: #24d18f;
+  color: black;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.content button:hover {
+  background-color: #2fffae;
+  box-shadow: 0 0 12px #284c46;
+}
