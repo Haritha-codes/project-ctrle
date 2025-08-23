@@ -9,11 +9,19 @@ const pills = [
 const Home = () => {
   return (
     <div className={styles.indexPage}>
-      <div className={styles.centeredText}>CTRL E</div>
-      <div className={styles.subText}>CTRLE FOR EDITING</div>
-      <div className={styles.subText}>Professional | Creative | Reliable</div>
+      {/* Background Elements */}
+      <div className={styles.bgOverlay}></div>
+      <div className={styles.glowCircle}></div>
 
-      {/* Moving pills container */}
+      {/* Hero Section */}
+      <div className={styles.heroContainer}>
+        <h1 className={styles.title}>CTRL E</h1>
+        <p className={styles.tagline}>CTRLE FOR EDITING</p>
+        <p className={styles.subText}>Professional | Creative | Reliable</p>
+        <button className={styles.ctaButton}>Get Started</button>
+      </div>
+
+      {/* Moving Services Pills */}
       <div className={styles.orbitBox}>
         <div className={styles.pillsTrack}>
           {pills.concat(pills).map((pill, idx) => (

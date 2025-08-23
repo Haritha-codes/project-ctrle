@@ -1,62 +1,23 @@
-.about-page {
+.about-section {
+  padding: 60px 20px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* same as client.css */
 }
 
-.about-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 2rem;
-  width: 90%;
-  max-width: 1100px;
-  box-shadow: 0 0 20px rgba(36, 209, 143, 0.4); /* neon glow like client.css */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.about-container {
+  max-width: 800px;
+  text-align: center;
 }
 
-.about-text {
-  flex: 1;
+.about-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.about-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #24d18f; /* neon cyan/green like client.css */
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
-.about-text ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about-text ul li {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #ddd;
-}
-
-.about-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.about-image img {
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(36, 209, 143, 0.6);
+.about-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
