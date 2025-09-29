@@ -1,34 +1,77 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 
-const pills = [
-  "VIDEO EDITING", "PHOTOGRAPHY", "THUMBNAILS DESIGN",
-  "STOP MOTION", "SOUND DESIGN", "SHORT FORM CONTENT",
+// 👉 Example demo videos (replace with your own later)
+const videos = [
+  "https://www.w3schools.com/html/mov_bbb.mp4",
+  "https://www.w3schools.com/html/movie.mp4",
+  "https://www.w3schools.com/html/mov_bbb.mp4",
 ];
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToSlide = (index) => {
+    if (index < 0) {
+      setCurrentIndex(videos.length - 1);
+    } else if (index >= videos.length) {
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex(index);
+    }
+  };
+
+  // ✅ Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-    <div className={styles.indexPage}>
-      {/* Background Elements */}
-      <div className={styles.bgOverlay}></div>
-      <div className={styles.glowCircle}></div>
+    <div className={styles.page}>
+      <div className={styles.sliderWrapper}>
+        <div className={styles.slider}>
+          <div
+            className={styles.slides}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {videos.map((video, idx) => (
+              <div key={idx} className={styles.slide}>
+                <video src={video} autoPlay muted loop></video>
+                <hr className={styles.sectionDivider} />
+              </div>
+            ))}
+          </div>
 
-      {/* Hero Section */}
-      <div className={styles.heroContainer}>
-        <h1 className={styles.title}>CTRL E</h1>
-        <p className={styles.tagline}>CTRLE FOR EDITING</p>
-        <p className={styles.subText}>Professional | Creative | Reliable</p>
-        <button className={styles.ctaButton}>Get Started</button>
-      </div>
+          {/* Arrows */}
+          <button
+            className={styles.arrowLeft}
+            onClick={() => goToSlide(currentIndex - 1)}
+          >
+            ❮
+          </button>
+          <button
+            className={styles.arrowRight}
+            onClick={() => goToSlide(currentIndex + 1)}
+          >
+            ❯
+          </button>
 
-      {/* Moving Services Pills */}
-      <div className={styles.orbitBox}>
-        <div className={styles.pillsTrack}>
-          {pills.concat(pills).map((pill, idx) => (
-            <div key={idx} className={styles.pillItem}>
-              {pill}
-            </div>
-          ))}
+          {/* Dots */}
+          <div className={styles.dots}>
+            {videos.map((_, idx) => (
+              <span
+                key={idx}
+                className={`${styles.dot} ${
+                  idx === currentIndex ? styles.active : ""
+                }`}
+                onClick={() => goToSlide(idx)}
+              ></span>
+              
+            ))}
+          </div>
         </div>
       </div>
     </div>

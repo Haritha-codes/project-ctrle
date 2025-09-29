@@ -1,0 +1,67 @@
+.projects-section {
+  background: radial-gradient(circle at top, #077a7d, #000000 60%);
+  color: white;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explanation-box {
+  padding: 70px;
+  border-radius: 12px;
+  background: rgba(7, 122, 125, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(7, 122, 125, 0.3);
+  max-width: 600px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.explanation-box h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.explanation-box h2 span {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.explanation-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.explanation-box button {
+  padding: 12px 28px;
+  background: #7ce1cf;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explanation-box button:hover {
+  background: #077a7d;
+  transform: scale(1.05);
+}
+.explanation-box::before {
+  content: "CTRLE";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform : translateX(-50%);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.07);
+  letter-spacing: 20px;
+  z-index: 0;
+}

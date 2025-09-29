@@ -1,0 +1,9 @@
+.projects-section {
+  background: radial-gradient(circle at top, #077a7d, #000000 60%);
+  color: white;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

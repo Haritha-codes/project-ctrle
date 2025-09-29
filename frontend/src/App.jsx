@@ -1,24 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Import all your page components
 import Home from './pages/Home';
 import Client from './pages/Client';
 import About from './pages/About';
-
-import Navbar from './components/navbar'; // Your navbar component
+import Project from './components/Project'; 
+import Standardedit from './components/Standardedit'; 
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/client" element={<Client />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
+      
+      <section id="home">
+        <Home />
+        <hr className="page-divider" />
+      </section>
+
+      <section id="about">
+        <About />
+        <hr className="page-divider" />
+      </section>
+
+      <section id="project">
+        <Project />
+        <hr className="page-divider" />
+      </section>
+
+      <section id="client">
+        <Client />
+        <hr className="page-divider" />
+      </section>
+
+      <section id="standardedit">
+        <Standardedit />
+        <hr className="page-divider" />
+      </section>
+    </>
   );
 }
 

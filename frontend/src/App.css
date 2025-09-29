@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth; /* smooth scrolling */
 }
 
 /* Full page + background */
@@ -14,7 +15,6 @@ html, body, #root {
   background-size: cover;
   color: #fff;
   overflow-x: hidden;
-  /* No padding-top here */
 }
 
 /* Navbar styles */
@@ -55,11 +55,27 @@ html, body, #root {
   box-shadow: 0 0 8px #24d18f;
 }
 
-/* Main content */
+/* Scrollable page sections */
+.page-container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.page-container section {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* Main content box */
 .content {
   max-width: 700px;
   margin: auto;
-  padding: 100px 20px 20px 20px; /* top padding to avoid navbar */
+  padding: 40px;
   background: rgba(0,0,0,0.3);
   border-radius: 16px;
   text-align: center;
@@ -80,3 +96,10 @@ html, body, #root {
   background-color: #2fffae;
   box-shadow: 0 0 12px #284c46;
 }
+.page-divider {
+  width: 70%; 
+    margin: 40px auto 0; /* <-- this centers it horizontally */
+ /* <-- Change this value */
+  /* other styles */
+}
+

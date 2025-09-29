@@ -1,160 +1,88 @@
-.indexPage {
+.page {
   min-height: 100vh;
-  background: linear-gradient(160deg, #0a0f10, #000);
-  font-family: "Poppins", sans-serif;
-  color: white;
-  position: relative;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 20px;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #077a7d, #000000 60%);
+  padding: 40px;
 }
 
-/* Abstract background effects */
-.bgOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 30%, #24d18f33, transparent),
-              radial-gradient(circle at 80% 70%, #ffffff14, transparent);
-  z-index: 0;
+
+/* Square slider on right side */
+.sliderWrapper {
+  position: relative;
+  width: 350px;   /* square width */
+  height: 350px;  /* square height */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+   
 }
 
-.glowCircle {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: #24d18f33;
-  border-radius: 50%;
-  filter: blur(150px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-/* Hero Text */
-.heroContainer {
-  text-align: center;
-  z-index: 2;
-  max-width: 800px;
-}
-
-.title {
-  font-size: 120px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-}
-
-.tagline {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  color: #a8fdd7;
-  letter-spacing: 2px;
-}
-
-.subText {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #eee;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.desc {
-  font-size: 16px;
-  color: #ccc;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.ctaButton {
-  background-color: #24d18f;
-  color: black;
-  border: none;
-  border-radius: 30px;
-  padding: 12px 32px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.ctaButton:hover {
-  background-color: #1aa46d;
-}
-
-/* Moving pills */
-.orbitBox {
+/* Slider box */
+.slider {
   position: relative;
   width: 100%;
-  height: 70px;
-  margin-top: 100px;
-  background: #122e29;
-  border-radius: 16px;
-  border: 1px solid rgba(36, 209, 143, 0.3);
+  height: 100%;
   overflow: hidden;
+}
+
+/* Slides row */
+.slides {
   display: flex;
-  align-items: center;
-  z-index: 2;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
 }
 
-.pillsTrack {
+/* Each slide = square */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 30px;
-  animation: scrollLoop 15s linear infinite;
-  font-weight: 600;
-  font-size: 14px;
-  color: #24d18f;
-  white-space: nowrap;
+  gap: 10px;
+  z-index: 10;
 }
 
-.pillItem {
-  flex: 0 0 auto;
-  user-select: none;
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Scroll animation */
-@keyframes scrollLoop {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.dot.active {
+  background: #24d18f;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px #24d18f;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .title {
-    font-size: 60px;
-    letter-spacing: 5px;
-  }
-
-  .desc {
-    font-size: 14px;
-  }
-
-  .ctaButton {
-    font-size: 14px;
-    padding: 10px 24px;
-  }
-
-  .orbitBox {
-    height: 50px;
-  }
-
-  .pillsTrack {
-    font-size: 12px;
-    gap: 20px;
-  }
+.sliderWrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  /* Remove margin-left: auto */
 }
+

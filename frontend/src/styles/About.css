@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+    background: radial-gradient(circle at top, #077a7d, #000000 85%);
+
 }
 
 .about-container {
