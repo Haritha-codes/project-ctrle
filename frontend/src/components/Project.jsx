@@ -12,7 +12,7 @@ const Projects = () => {
           will be edited into engaging videos for social media publication or 
           digital advertising to promote your brand identity through ad films.
         </p>
-        <button>₹ 500</button>
+        <button>₹ 800</button>
       </div>
     </section>
   );

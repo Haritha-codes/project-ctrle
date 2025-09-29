@@ -1,0 +1,75 @@
+body {
+  min-height: 2000px; /* Keeps the page tall for scroll if needed */
+}
+
+.proedit-section {
+  background: radial-gradient(circle at top, #077a7d, #000000 60%);
+  color: white;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the box vertically */
+}
+
+.proedit-box {
+  width: 500px;
+  height: 500px; /* Makes it a perfect square */
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(7, 122, 125, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(7, 122, 125, 0.3);
+  color: #fff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  box-sizing: border-box; /* Keeps padding inside the square */
+  overflow: hidden; /* Prevents content from overflowing the square */
+}
+
+.proedit-box h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.proedit-box h2 span {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.proedit-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.proedit-box button {
+  padding: 12px 28px;
+  background: #7ce1cf;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.proedit-box button:hover {
+  background: #077a7d;
+  transform: scale(1.05);
+}
+
+.proedit-box::before {
+  content: "CTRLE";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.07);
+  letter-spacing: 20px;
+  z-index: 0;
+}

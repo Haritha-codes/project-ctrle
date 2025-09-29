@@ -7,6 +7,7 @@ import About from './pages/About';
 import Project from './components/Project'; 
 import Standardedit from './components/Standardedit'; 
 import Navbar from './components/Navbar';
+import Proedit from './components/Proedit';
 
 function App() {
   return (
@@ -36,6 +37,11 @@ function App() {
       <section id="standardedit">
         <Standardedit />
         <hr className="page-divider" />
+      </section>
+
+      <section id="Proedit">
+        <Proedit/>
+        <hr className="page-divider"/>
       </section>
     </>
   );
